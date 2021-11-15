@@ -52,19 +52,19 @@ const Home = () => {
         	</BioSection>
 		<BioSection>
           		<BioYear>3</BioYear>
-          		W เลื่อน cursor ไปตาม “คำ” โดยดูจาก white space (jump by Words)
-        	</BioSection>
-		<BioSection>
-          		<BioYear>4</BioYear>
           		b เลื่อน cursor ไปตาม “ท้ายคำ” (jump Backward by words )
         	</BioSection>
 		<BioSection>
+          		<BioYear>4</BioYear>
+          		$ เลื่อน cursor ไปท้ายบรรทัด (end of line)
+        	</BioSection>
+		<BioSection>
           		<BioYear>5</BioYear>
-          		B เลื่อน cursor ไปตาม “ท้ายคำ” โดยดูจาก white (space jump Backward by words)
+          		0 เลื่อน cursor ไปต้นบรรทัด (zero start of line)
         	</BioSection>
 		<BioSection>
           		<BioYear>6</BioYear>
-          		0 เลื่อน cursor ไปต้นบรรทัด (zero start of line)
+          		nG ไปยังบรรทัดที่ n หากไม่ใส่ n จะไปบรรทัดสุดท้าย
         	</BioSection>
 		<BioSection>
           		<BioYear>7</BioYear>
@@ -72,21 +72,82 @@ const Home = () => {
         	</BioSection>
 		<BioSection>
           		<BioYear>8</BioYear>
-          		$ เลื่อน cursor ไปท้ายบรรทัด (end of line)
-        	</BioSection>
-		<BioSection>
-          		<BioYear>9</BioYear>
           		% เลื่อนcursor เพื่อหาขอบเขตของ block [ ] { }
         	</BioSection>
 		<BioSection>
-          		<BioYear>10</BioYear>
+          		<BioYear>9</BioYear>
           		gg เลื่อน cursor ไปบรรทัดแรกสุดของไฟล์
         	</BioSection>
 		<BioSection>
-          		<BioYear>11</BioYear>
+          		<BioYear>10</BioYear>
           		G เลื่อน cursor ไปบรรทัดท้ายสุดของไฟล์
         	</BioSection>
 	</Section>
+<Section delay={0.2}>
+<Heading as="h3" fontSize={20} mt={10} variant="section-title">
+          		Editing
+        	</Heading>
+		<BioSection>
+          		<BioYear>1</BioYear>
+          		r(ตัวอักษร)ทับ 1 ตัวอักษรที่เราต้องการ (replace)
+        	</BioSection>
+		<BioSection>
+          		<BioYear>2</BioYear>
+          		u   Undo การกระทำครั้งล่าสุด [ใช้บ่อย]
+        	</BioSection>
+		<BioSection>
+          		<BioYear>3</BioYear>
+          		U   Undo การกระทำทั้งบรรทัดปัจจุบัน
+        	</BioSection>
+		<BioSection>
+          		<BioYear>4</BioYear>
+          		x   ลบตรง cursor [ใช้บ่อย]
+        	</BioSection>
+		<BioSection>
+          		<BioYear>5</BioYear>
+          		dw  ลบคำ
+        	</BioSection>
+		<BioSection>
+          		<BioYear>6</BioYear>
+          		dd  ลบบรรทัด [ใช้บ่อย]
+        	</BioSection>
+		<BioSection>
+          		<BioYear>7</BioYear>
+          		d$  ลบจาก cursor จนท้ายบรรทัด
+        	</BioSection>
+		<BioSection>
+          		<BioYear>8</BioYear>
+          		d0  ลบจาก cursor จนต้นบรรทัด
+        	</BioSection>
+		<BioSection>
+          		<BioYear>9</BioYear>
+          		dG  ลบจาก cursor จนท้ายไฟล์
+        	</BioSection>
+		<BioSection>
+          		<BioYear>10</BioYear>
+          		a   เพิ่มข้อมูลต่อจาก cursor [ใช้บ่อย]
+        	</BioSection>
+		<BioSection>
+          		<BioYear>11</BioYear>
+          		A   เพิ่มข้อมูลต่อจากท้ายบรรทัด 
+        	</BioSection>
+		<BioSection>
+          		<BioYear>12</BioYear>
+          		i   แทรกข้อมูลหน้า cursor [ใช้บ่อย]
+        	</BioSection>
+		<BioSection>
+          		<BioYear>13</BioYear>
+          		I   เเทรกข้อมูลที่ต้นบรรทัด 
+        	</BioSection>
+		<BioSection>
+          		<BioYear>14</BioYear>
+          		o   แทรกบรรทัดด้านล่าง cursor [ใช้บ่อย]
+        	</BioSection>
+		<BioSection>
+          		<BioYear>15</BioYear>
+          		O   แทรกบรรทัดด้านบน cursor  
+        	</BioSection>
+</Section>
 <Section delay={0.2}>
 <Heading as="h3" fontSize={20} mt={10} variant="section-title">
           		Marking text(visual mode)
@@ -118,43 +179,6 @@ const Home = () => {
 		<BioSection>
           		<BioYear>7</BioYear>
           		v[ลากคลุม]c — change สิ่งที่ลากคลุม
-        	</BioSection>
-</Section>
-<Section delay={0.2}>
-<Heading as="h3" fontSize={20} mt={10} variant="section-title">
-          		Editing
-        	</Heading>
-		<BioSection>
-          		<BioYear>1</BioYear>
-          		r(ตัวอักษร)ทับ 1 ตัวอักษรที่เราต้องการ (replace)
-        	</BioSection>
-		<BioSection>
-          		<BioYear>2</BioYear>
-          		J เอาข้อความทั้งหมดของบรรทัดล่างขึ้นมาต่อ (join line) [ใช้บ่อย]
-        	</BioSection>
-		<BioSection>
-          		<BioYear>3</BioYear>
-          		cc เปลี่ยข้อความทั้งบรรทัด (change (replace) an entire line)
-        	</BioSection>
-		<BioSection>
-          		<BioYear>4</BioYear>
-          		s = substitute 1 ตัวอักษร
-        	</BioSection>
-		<BioSection>
-          		<BioYear>5</BioYear>
-          		S เหมือน cc
-        	</BioSection>
-		<BioSection>
-          		<BioYear>6</BioYear>
-          		ctrl-r — redo [ใช้บ่อย]
-        	</BioSection>
-		<BioSection>
-          		<BioYear>7</BioYear>
-          		u — undo [ใช้บ่อย]
-        	</BioSection>
-		<BioSection>
-          		<BioYear>8</BioYear>
-          		~ เปลี่ยนตัวอักษรจาก upper เป็น lower หรือ lower เป็น upper case [ใช้บ่อย]
         	</BioSection>
 </Section>
 <Section delay={0.2}>
@@ -229,18 +253,34 @@ const Home = () => {
         	</BioSection>
 		<BioSection>
           		<BioYear>2</BioYear>
-          		:wq — write (save) ไฟล์พร้อม quit
+          		:/string ค้นหาข้อความที่ต้องการ
         	</BioSection>
 		<BioSection>
           		<BioYear>3</BioYear>
-          		:q — quit ถ้ามีการแก้ไฟล์จะไม่สามารถ quit ได้ [ใช้บ่อย]
+          		:help ดูคำสั่งต่างๆ
         	</BioSection>
 		<BioSection>
           		<BioYear>4</BioYear>
-          		:q! — quit โดยไม่มีการ save ใดๆ
+          		:set nu แสดงหมายเลขบรรทัด
         	</BioSection>
 		<BioSection>
           		<BioYear>5</BioYear>
+          		:%s/old/new/g หาคำ old เเทนที่ด้วยคำว่า new ทั้งหมดที่เจอ
+        	</BioSection>
+		<BioSection>
+          		<BioYear>6</BioYear>
+          		:wq — write (save) ไฟล์พร้อม quit
+        	</BioSection>
+		<BioSection>
+          		<BioYear>7</BioYear>
+          		:q — quit ถ้ามีการแก้ไฟล์จะไม่สามารถ quit ได้ [ใช้บ่อย]
+        	</BioSection>
+		<BioSection>
+          		<BioYear>8</BioYear>
+          		:q! — quit โดยไม่มีการ save ใดๆ
+        	</BioSection>
+		<BioSection>
+          		<BioYear>9</BioYear>
           		คำที่ต้องการหา — ค้นหาคำในไฟล์ (กด n เพื่อค้นหาซ้ำ กด N เพื่อค้นหาย้อนกลับ) [ใช้บ่อย]
         	</BioSection>
 </Section>
